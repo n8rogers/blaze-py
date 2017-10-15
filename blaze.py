@@ -5,6 +5,11 @@ from time import sleep
 from random import randint
 import RPi.GPIO as GPIO
 
+input1 = 26
+input2 = 25
+output1 = 21
+item = 0
+
 print "Initializing Mixer..."
 pygame.mixer.init()
 GPIO.setmode(GPIO.BCM)
@@ -14,11 +19,6 @@ GPIO.setup(output1, GPIO.OUT)
 
 print "Ready..."
 GPIO.output(output1, GPIO.HIGH)
-
-input1 = 26
-input2 = 25
-output1 = 21
-item = 0
 
 soundsList = []
 for file in os.listdir("."):
