@@ -37,10 +37,11 @@ def getNextSound():
 def playSound():
 	if(playing):
 		pygame.mixer.stop()
-		playing = false;
+		playing = false
 	else:
 		pygame.mixer.music.load(getNextSound())
 		pygame.mixer.music.play()
+		playing = true
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(input1, GPIO.IN)
