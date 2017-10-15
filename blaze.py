@@ -13,7 +13,7 @@ GPIO.setup(input1, GPIO.IN)
 GPIO.setup(output1, GPIO.OUT)
 
 print "Ready..."
-GPIO.output(output1, 1)
+GPIO.output(output1, GPIO.HIGH)
 
 input1 = 26
 input2 = 25
