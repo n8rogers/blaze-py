@@ -3,10 +3,10 @@
 import os, pygame
 from time import sleep
 from random import randint
+import RPi.GPIO as GPIO
 
 pygame.mixer.init()
-
-import RPi.GPIO as GPIO
+print "Ready..."
 
 input1 = 26
 input2 = 25
@@ -36,6 +36,7 @@ def getNextSound():
 	return sound
 
 def playSound():
+	global playing
 	if(playing):
 		pygame.mixer.stop()
 		playing = False
