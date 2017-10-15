@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 import logging
 
-logging.basicConfig(filename='blaze.out', level=logging.info)
+logging.basicConfig(filename='blaze.out', level=logging.INFO)
 logging.info("Initializing Mixer...")
 
 import os, pygame, atexit
