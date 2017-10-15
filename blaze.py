@@ -24,9 +24,10 @@ logging.info("Ready...")
 GPIO.output(output1, GPIO.HIGH)
 
 soundsList = []
-for file in os.listdir("/home/pi/Github/blaze-py/"):
+directory = "/home/pi/Github/blaze-py/"
+for file in os.listdir(directory):
 	if file.endswith(".mp3"):
-		soundsList.append(file)
+		soundsList.append(directory + file)
 
 @atexit.register
 def goodbye():
