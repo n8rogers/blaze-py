@@ -27,7 +27,7 @@ for file in os.listdir("."):
 
 @atexit.register
 def goodbye():
-	GPIO.output(output1,GPIO.LOW)
+	GPIO.cleanup()
 
 def getRandomSound():
 	listSize = len(soundsList)
