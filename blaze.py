@@ -11,7 +11,7 @@ import RPi.GPIO as GPIO
 input1 = 26
 input2 = 25
 item = 0
-playing = false;
+playing = false
 
 soundsList = []
 for file in os.listdir("."):
@@ -31,8 +31,9 @@ def getNextSound():
 	item += 1
 	if(item > len(soundsList) - 1):
 		item = 0;
-	
-	return soundsList[item]
+	sound = soundsList[item]
+	print "Playing " + sound
+	return sound
 
 def playSound():
 	if(playing):
