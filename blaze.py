@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-import os, pygame
+import os, pygame, atexit
 from time import sleep
 from random import randint
 import RPi.GPIO as GPIO
@@ -24,6 +24,10 @@ soundsList = []
 for file in os.listdir("."):
 	if file.endswith(".mp3"):
 		soundsList.append(file)
+
+@atexit.register
+def goodbye():
+	GPIO.output(output1,GPIO.LOW)
 
 def getRandomSound():
 	listSize = len(soundsList)
@@ -60,9 +64,3 @@ while True:
     #     os.system('mpg123 -q blaze_theme.mp3')
 
     sleep(0.1);
-
-import atexit
-
-@atexit.register
-def goodbye():
-	GPIO.output(output1,GPIO.LOW)
