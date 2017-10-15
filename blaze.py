@@ -5,13 +5,13 @@ from time import sleep
 from random import randint
 import RPi.GPIO as GPIO
 
+print "Initializing Mixer..."
 pygame.mixer.init()
 print "Ready..."
 
 input1 = 26
 input2 = 25
 item = 0
-playing = False
 
 soundsList = []
 for file in os.listdir("."):
@@ -36,14 +36,8 @@ def getNextSound():
 	return sound
 
 def playSound():
-	global playing
-	if(playing):
-		pygame.mixer.stop()
-		playing = False
-	else:
-		pygame.mixer.music.load(getNextSound())
-		pygame.mixer.music.play()
-		playing = True
+	pygame.mixer.music.load(getNextSound())
+	pygame.mixer.music.play()
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(input1, GPIO.IN)
