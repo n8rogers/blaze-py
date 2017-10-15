@@ -11,7 +11,7 @@ import RPi.GPIO as GPIO
 input1 = 26
 input2 = 25
 item = 0
-playing = false
+playing = False
 
 soundsList = []
 for file in os.listdir("."):
@@ -38,11 +38,11 @@ def getNextSound():
 def playSound():
 	if(playing):
 		pygame.mixer.stop()
-		playing = false
+		playing = False
 	else:
 		pygame.mixer.music.load(getNextSound())
 		pygame.mixer.music.play()
-		playing = true
+		playing = True
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(input1, GPIO.IN)
