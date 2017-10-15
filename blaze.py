@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 import logging
 
-logging.basicConfig(filename='blaze.out', level=logging.INFO)
+logging.basicConfig(filename='/home/pi/Github/blaze-py/blaze.out', level=logging.INFO)
 logging.info("Initializing Mixer...")
 
 import os, pygame, atexit
@@ -24,7 +24,7 @@ logging.info("Ready...")
 GPIO.output(output1, GPIO.HIGH)
 
 soundsList = []
-for file in os.listdir("."):
+for file in os.listdir("/home/pi/Github/blaze-py/"):
 	if file.endswith(".mp3"):
 		soundsList.append(file)
 
