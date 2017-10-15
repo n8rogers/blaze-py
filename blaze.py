@@ -7,10 +7,17 @@ import RPi.GPIO as GPIO
 
 print "Initializing Mixer..."
 pygame.mixer.init()
+GPIO.setmode(GPIO.BCM)
+GPIO.setup(input1, GPIO.IN)
+#GPIO.setup(input2, GPIO.IN)
+GPIO.setup(output1, GPIO.OUT)
+
 print "Ready..."
+GPIO.output(output1, 1)
 
 input1 = 26
 input2 = 25
+output1 = 21
 item = 0
 
 soundsList = []
@@ -39,7 +46,7 @@ def playSound():
 	pygame.mixer.music.load(getNextSound())
 	pygame.mixer.music.play()
 
-GPIO.setmode(GPIO.BCM)
+
 GPIO.setup(input1, GPIO.IN)
 #GPIO.setup(input2, GPIO.IN)
 
