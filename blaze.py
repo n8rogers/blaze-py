@@ -60,3 +60,9 @@ while True:
     #     os.system('mpg123 -q blaze_theme.mp3')
 
     sleep(0.1);
+
+import atexit
+
+@atexit.register
+def goodbye():
+	GPIO.output(output1,GPIO.LOW)
