@@ -59,13 +59,14 @@ def playSound():
 GPIO.setup(input1, GPIO.IN)
 #GPIO.setup(input2, GPIO.IN)
 
-push = False
+rec = True
 while True:
-
-    if (GPIO.input(input1) == False & push == False):
-    	playSound()
-    	push = True
+	push = (GPIO.input(input1) == False
+    if (push):
+    	if (rec):
+    		playSound()
+    		rec = False
     else:
-    	push = False
+    	rec = True
 
     sleep(0.1);
