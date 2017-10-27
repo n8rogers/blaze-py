@@ -59,13 +59,13 @@ def playSound():
 GPIO.setup(input1, GPIO.IN)
 #GPIO.setup(input2, GPIO.IN)
 
-
+push = False
 while True:
 
-    if (GPIO.input(input1)== False):
+    if (!GPIO.input(input1) && !push):
     	playSound()
-
-    # if (GPIO.input(input2)== False):
-    #     os.system('mpg123 -q blaze_theme.mp3')
+    	push = True
+    else:
+    	push = False
 
     sleep(0.1);
