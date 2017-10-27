@@ -62,7 +62,7 @@ GPIO.setup(input1, GPIO.IN)
 push = False
 while True:
 
-    if (!GPIO.input(input1) && !push):
+    if (GPIO.input(input1) == False && push == False):
     	playSound()
     	push = True
     else:
