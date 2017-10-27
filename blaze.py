@@ -61,8 +61,7 @@ GPIO.setup(input1, GPIO.IN)
 
 rec = True
 while True:
-	push = (GPIO.input(input1) == False
-    if (push):
+    if (GPIO.input(input1) == False):
     	if (rec):
     		playSound()
     		rec = False
